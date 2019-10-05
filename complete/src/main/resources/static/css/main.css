@@ -1,0 +1,40 @@
+body{
+
+    background: url("https://cnet3.cbsistatic.com/img/NcdO0FZGyUyqnS5lJG74tO9HOwI=/1600x900/2019/02/13/3bd81000-0aa7-41d0-8eba-4682d8e26521/all-star-starters-graphic.jpg") no-repeat center center fixed;
+    background-size: cover;
+    font-family: "Trebuchet MS", Times, serif;
+}
+
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+}
+
+.main-page{
+    display: table;
+    width: 1500px;
+    height: 100%;
+    background-color: white;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: rgba(20, 68, 64, 0.8);
+
+}
+
+.live-bracket{
+    margin-left:auto;
+    margin-right: auto;
+    width: 90%;
+    display: block;
+
+}
+
+@media screen and (max-width: 1125px){
+    .main-page{
+        width: 80%;
+    }
+}

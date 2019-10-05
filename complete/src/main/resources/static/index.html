@@ -1,0 +1,66 @@
+<!DOCTYPE HTML>
+<html>
+<head> 
+    <title>NBA Bracket</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+
+    <!--<input type="text" id="portfolioID">
+    <button type="button" onclick="sendData()">Submit</button>-->
+
+    <!--main page-->
+    <div class="main">
+        <h1 class="head">WELCOME TO THE NBA PLAYOFFS BRACKET</h1>
+        <h3>REGISTER AND START YOUR PLAYOFF PREDICTIONS NOW!</h3>
+        <button id="logbtn" onclick="hideFunct('log')">Login</button>
+        <button id="lrnbtn" onclick="hideFunct('stats')">Learn More</button>
+    </div>
+
+    <!--login form-->
+    <div class="modal" id="log">
+        <form class="formbox" action="/main" method="post">
+            <div class="form-top">
+                <span class="close" onclick="document.getElementById('log').style.display='none'">&times;</span>
+            </div>
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="username" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="password" required>
+            <button id="smt" type="submit">Submit</button>
+            <button id="cnl" type="button" onclick="document.getElementById('log').style.display='none'">Cancel</button>
+        </form>
+    </div>
+
+    <div class="modal" id="stats">
+        <div class="formbox">
+            <div class="form-top">
+                <span class="close" onclick="document.getElementById('stats').style.display='none'">&times;</span>
+            </div>
+            <h1>How To Play</h1>
+            <p>(Input Instructions Here)</p>
+        </div>
+    </div>
+
+
+
+    <!--<form action="/greeting" method="post">
+        <label><b>first name</b></label>
+        <input type="text" placeholder="Enter Your First Name" name="firstname" required>
+
+        <label><b>last name</b></label>
+        <input type="text" placeholder="Enter Your Last Name" name="lastname" required>
+
+        <button type="submit">Submit</button>
+    </form>-->
+
+    <p id="fat"></p>
+
+
+    <script src="/js/index.js"></script>
+
+</body>
+</html>
