@@ -1,28 +1,28 @@
 package hello;
 
 public class Portfolio {
-    private String firstname;
+    private String username;
     private String password;
 
     public Portfolio(){
 
     }
 
-    public Portfolio(String firstname, String password){
-        this.firstname = firstname;
+    public Portfolio(String username, String password){
+        this.username = username;
         this.password = password;
     }
 
-    public String getfirstname(){
-        return this.firstname;
+    public String getusername(){
+        return this.username;
     }
 
     public String getpassword() {
         return this.password;
     }
 
-    public void setfirstname(String firstname) {
-        this.firstname = firstname;
+    public void setusername(String username) {
+        this.username = username;
     }
 
     public void setpassword(String password) {

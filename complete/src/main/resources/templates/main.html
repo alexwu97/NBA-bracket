@@ -9,6 +9,7 @@
 <body>
 <div class="back">
     <div class="main-page">
+        <p th:text="${portfolio.getusername()}"/>
         <h1>Current Playoff Status:</h1>
         <img class="live-bracket" src="https://s.yimg.com/ny/api/res/1.2/Se4R6mBLItgoFLb7cmDQSA--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https://media.zenfs.com/en-US/article.sportingnews.com/e79b0179dc65b08c8f703b2af21c9be3" alt="bracket">
         <p>Predict your own NBA Playoffs:</p>
@@ -19,10 +20,6 @@
         <p>Join other friends and see who has the best predictions!</p>
         <button>Create a Group</button>
         <p>Look up others' NBA playoff predictions!</p>
-
-
-
-        <p th:text="${portfolio}" />
 
     </div>
 

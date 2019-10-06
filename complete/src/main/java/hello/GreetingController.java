@@ -32,12 +32,15 @@ public class GreetingController {
     @RequestMapping(value = "/greeting", method = RequestMethod.POST)
     public String greet(Portfolio portfolio, Model model){
         model.addAttribute("portfolio", portfolio);
-        System.out.println(portfolio.getfirstname());
+        System.out.println(portfolio.getusername());
         return "greeting";
     }
 
     @RequestMapping(value = "/main", method = RequestMethod.POST)
-    public String main(Portfolio portfolio){
+    public String main(Portfolio portfolio, Model model){
+        System.out.print(portfolio.getusername());
+        System.out.print(portfolio.getpassword());
+        model.addAttribute("portfolio", portfolio);
         return "main";
     }
 
