@@ -4,149 +4,234 @@
     <title>NBA Bracket</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="css/bracket.css">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='https://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Kaushan+Script|Herr+Von+Muellerhoff' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Istok+Web|Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/bracket.css">
+
 </head>
 
 <body>
+<header>
+    <h1>NBA Bracket</h1>
+</header>
+<div class="main-body">
+    <section id="bracket">
+        <div class="container">
+            <div class="split west">
+                <div class="round round-one">
+                    <div class="round-details">Western Conference Round 1<br/></div>
+                    <ul class="matchup">
+                        <li class="team team-top" id="gsw">
+                            <span class="team-name">WARRIORS</span>
+                            <input class="value scoreinput" id="W11I" onchange="outputFunc('#W11I', '.west')" value="0" type="number">
+                        </li>
+                        <li class="team team-bottom" id="lac">
+                            <span class="team-name">CLIPPERS</span>
+                            <input class="value scoreinput" id="W12I" onchange="outputFunc('#W12I', '.west')" value="0" type="number">
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top" id="hsr">
+                            <span class="team-name">ROCKETS</span>
+                            <input class="value scoreinput" id="W13I" onchange="outputFunc('#W13I', '.west')" value="0" type="number">
+                        </li>
+                        <li class="team team-bottom" id="uta">
+                            <span class="team-name">JAZZ</span>
+                            <input class="value scoreinput" id="W14I" onchange="outputFunc('#W14I', '.west')" value="0" type="number">
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top" id="ptb">
+                            <span class="team-name">TRAIL BLAZERS</span>
+                            <input class="value scoreinput" id="W15I" onchange="outputFunc('#W15I', '.west')" value="0" type="number">
+                        </li>
+                        <li class="team team-bottom" id="okc">
+                            <span class="team-name">THUNDER</span>
+                            <input class="value scoreinput" id="W16I" onchange="outputFunc('#W16I', '.west')" value="0" type="number">
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top" id="dvn">
+                            <span class="team-name">NUGGETS</span>
+                            <input class="value scoreinput" id="W17I" onchange="outputFunc('#W17I', '.west')" value="0" type="number">
+                        </li>
+                        <li class="team team-bottom" id="sas">
+                            <span class="team-name">SPURS</span>
+                            <input class="value scoreinput" id="W18I" onchange="outputFunc('#W18I', '.west')" value="0" type="number">
+                        </li>
+                    </ul>
+
+                </div>  <!-- END ROUND ONE -->
+
+                <div class="round round-two">
+                    <div class="round-details">Western Conference Semi-Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team team-top lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="W21I" onchange="outputFunc('#W21I', '.west')" value="0" type="number">
+                        </li>
+                        <li class="team team-bottom lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="W22I" onchange="outputFunc('#W22I', '.west')" value="0" type="number">
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="W23I" onchange="outputFunc('#W23I', '.west')" value="0" type="number">
+                        </li>
+                        <li class="team team-bottom lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="W24I" onchange="outputFunc('#W24I', '.west')" value="0" type="number">
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND TWO -->
+
+                <div class="round round-three">
+                    <div class="round-details">Western Conference Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team team-top lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="W31I" onchange="outputFunc('#W31I', '.west')" value="0" type="number">
+                        </li>
+                        <li class="team team-bottom lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="W32I" onchange="outputFunc('#W32I', '.west')" value="0" type="number">
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND THREE -->
+            </div>
+
+            <div class="champion west east">
+                <div class="final">
+                    <i class="fa fa-trophy"></i>
+                    <div class="round-details">championship <br/></div>
+                    <ul class ="matchup championship">
+                        <li class="team team-top champ lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="W41I" onchange="outputFunc('#W41I', '.west')" value="0" type="number">
+                        </li>
+                        <li class="team team-bottom champ lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="E41I" onchange="outputFunc('#E41I', '.east')" value="0" type="number">
+                        </li>
+                    </ul>
+                </div>
+            </div>
 
 
-<section id="bracket">
-    <div class="container">
-        <div class="split west">
-            <div class="round round-one">
-                <div class="round-details">Western Conference Round 1<br/></div>
-                <ul class="matchup">
-                    <li class="team team-top"><span class="team-name">WARRIORS</span><span class="value score" id="W11" onclick="inputFunc('#W11I')">0</span>
-                        <input class="scoreinput" id="W11I" onchange="outputFunc('#W11', '#W11I', '.west')" value="" type="number"></li>
-                    <li class="team team-bottom"><span class="team-name">CLIPPERS</span><span class="value score" id="W12" onclick="inputFunc('#W12I')">0</span>
-                        <input class="scoreinput" id="W12I" onchange="outputFunc('#W12', '#W12I', '.west')" type="number"></li>
-                </ul>
-                <ul class="matchup">
-                    <li class="team team-top"><span class="team-name">ROCKETS</span><span class="value score" id="W13" onclick="inputFunc('#W13I')">0</span>
-                        <input class="scoreinput" id="W13I" onchange="outputFunc('#W13', '#W13I', '.west')" type="number"></li>
-                    <li class="team team-bottom"><span class="team-name">JAZZ</span><span class="value score" id="W14" onclick="inputFunc('#W14I')">0</span>
-                        <input class="scoreinput" id="W14I" onchange="outputFunc('#W14', '#W14I', '.west')" type="number"></li>
-                </ul>
-                <ul class="matchup">
-                    <li class="team team-top"><span class="team-name">TRAIL BLAZERS</span><span class="value score" id="W15" onclick="inputFunc('#W15I')">0</span>
-                        <input class="scoreinput" id="W15I" onchange="outputFunc('#W15', '#W15I', '.west')" type="number"></li>
-                    <li class="team team-bottom"><span class="team-name">THUNDER</span><span class="value score" id="W16" onclick="inputFunc('#W16I')">0</span>
-                        <input class="scoreinput" id="W16I" onchange="outputFunc('#W16', '#W16I', '.west')" type="number"></li>
-                </ul>
-                <ul class="matchup">
-                    <li class="team team-top"><span class="team-name">NUGGETS</span><span class="value score" id="W17" onclick="inputFunc('#W17I')">0</span>
-                        <input class="scoreinput" id="W17I" onchange="outputFunc('#W17', '#W17I', '.west')" type="number"></li>
-                    <li class="team team-bottom"><span class="team-name">SPURS</span><span class="value score" id="W18" onclick="inputFunc('#W18I')">0</span>
-                        <input class="scoreinput" id="W18I" onchange="outputFunc('#W18', '#W18I', '.west')" type="number"></li>
-                </ul>
+            <div class="split east">
 
-            </div>  <!-- END ROUND ONE -->
 
-            <div class="round round-two">
-                <div class="round-details">Western Conference Semi-Finals<br/></div>
-                <ul class="matchup">
-                    <li class="team team-top lock"><span class="team-name"></span><span class="value" style="display:none;" id="W21" onclick="inputFunc('#W21I')">0</span>
-                        <input class="scoreinput" id="W21I" onchange="outputFunc('#W21', '#W21I', '.west')"type="number"></li>
-                    <li class="team team-bottom lock"><span class="team-name"></span><span class="value" style="display:none;" id="W22" onclick="inputFunc('#W22I')">0</span>
-                        <input class="scoreinput" id="W22I" onchange="outputFunc('#W22', '#W22I', '.west')" type="number"></li>
-                </ul>
-                <ul class="matchup">
-                    <li class="team team-top lock"><span class="team-name"></span><span class="value" style="display:none;" id="W23" onclick="inputFunc('#W23I')">0</span>
-                        <input class="scoreinput" id="W23I" onchange="outputFunc('#W23', '#W23I', '.west')" type="number"></li>
-                    <li class="team team-bottom lock"><span class="team-name"></span><span class="value" style="display:none;" id="W24" onclick="inputFunc('#W24I')">0</span>
-                        <input class="scoreinput" id="W24I" onchange="outputFunc('#W24', '#W24I', '.west')" type="number"></li>
-                </ul>
-            </div>  <!-- END ROUND TWO -->
+                <div class="round round-three">
+                    <div class="round-details">Eastern Conference Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team2 team-top lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="E31I" onchange="outputFunc('#E31I', '.east')" value="0" type="number">
+                        </li>
+                        <li class="team2 team-bottom lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="E32I" onchange="outputFunc('#E32I', '.east')" value="0" type="number">
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND THREE -->
 
-            <div class="round round-three">
-                <div class="round-details">Western Conference Finals<br/></div>
-                <ul class="matchup">
-                    <li class="team team-top lock"><span class="team-name"></span><span class="value" style="display:none;" id="W31" onclick="inputFunc('#W31I')">0</span>
-                        <input class="scoreinput" id="W31I" onchange="outputFunc('#W31', '#W31I', '.west')" type="number"></li>
-                    <li class="team team-bottom lock"><span class="team-name"></span><span class="value" style="display:none;" id="W32" onclick="inputFunc('#W32I')">0</span>
-                        <input class="scoreinput" id="W32I" onchange="outputFunc('#W32', '#W32I', '.west')" type="number"></li>
-                </ul>
-            </div>  <!-- END ROUND THREE -->
-        </div>
+                <div class="round round-two">
+                    <div class="round-details">Eastern Conference Semi-Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team2 team-top lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="E21I" onchange="outputFunc('#E21I', '.east')" value="0" type="number">
+                        </li>
+                        <li class="team2 team-bottom lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="E22I" onchange="outputFunc('#E22I', '.east')" value="0" type="number">
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team2 team-top lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="E23I" onchange="outputFunc('#E23I', '.east')" value="0" type="number">
+                        </li>
+                        <li class="team2 team-bottom lock">
+                            <span class="team-name"></span>
+                            <input class="value" style="display:none;" id="E24I" onchange="outputFunc('#E24I', '.east')" value="0" type="number">
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND TWO -->
 
-        <div class="champion west east">
-            <div class="final">
-                <i class="fa fa-trophy"></i>
-                <div class="round-details">championship <br/></div>
-                <ul class ="matchup championship">
-                    <li class="team team-top champ lock"><span class="team-name"></span><span class="value" style="display:none;" id="W41" onclick="inputFunc('#W41I')">0</span>
-                        <input class="scoreinput" id="W41I" onchange="outputFunc('#W41', '#W41I', '.west')" type="number"></li>
-                    <li class="team team-bottom champ lock"><span class="team-name"></span><span class="value" style="display:none;" id="E41" onclick="inputFunc('#E41I')">0</span>
-                        <input class="scoreinput" id="E41I" onchange="outputFunc('#E41', '#E41I', '.east')" type="number"></li>
-                </ul>
+                <div class="round round-one current">
+                    <div class="round-details">Eastern Conference Round 1<br/></div>
+                    <ul class="matchup">
+                        <li class="team2 team-top" id="mwb">
+                            <span class="team-name">BUCKS</span>
+                            <input class="value scoreinput2" id="E11I" onchange="outputFunc('#E11I', '.east')" value="0" type="number">
+                        </li>
+                        <li class="team2 team-bottom" id="dtp">
+                            <span class="team-name">PISTONS</span>
+                            <input class="value scoreinput2" id="E12I" onchange="outputFunc('#E12I', '.east')" value="0" type="number">
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+
+                        <li class="team2 team-top" id="boc">
+                            <span class="team-name">CELTICS</span>
+                            <input class="value scoreinput2" id="E13I" onchange="outputFunc('#E13I', '.east')" value="0" type="number">
+                        </li>
+
+                        <li class="team2 team-bottom" id="inp">
+                            <span class="team-name">PACERS</span>
+                            <input class="value scoreinput2" id="E14I" onchange="outputFunc('#E14I', '.east')" value="0" type="number">
+                        </li>
+
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team2 team-top" id="phi">
+                            <span class="team-name">76ERS</span>
+                            <input class="value scoreinput2" id="E15I" onchange="outputFunc('#E15I', '.east')" value="0" type="number">
+                        </li>
+                        <li class="team2 team-bottom" id="bkn">
+                            <span class="team-name">NETS</span>
+                            <input class="value scoreinput2" id="E16I" onchange="outputFunc('#E16I', '.east')" value="0" type="number">
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team2 team-top" id="tra">
+                            <span class="team-name">RAPTORS</span>
+                            <input class="value scoreinput2" id="E17I" onchange="outputFunc('#E17I', '.east')" value="0" type="number">
+                        </li>
+                        <li class="team2 team-bottom" id="orl">
+                            <span class="team-name">MAGIC</span>
+                            <input class="value scoreinput2" id="E18I" onchange="outputFunc('#E18I', '.east')" value="0" type="number">
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND ONE -->
             </div>
         </div>
+    </section>
 
+    <section class="IO">
 
-        <div class="split east">
+        <button onclick="location.href='/main';" class="ret">Return to Menu</button>
+        <button class="sub" onclick="testFunct()">Submit Your Predictions</button>
+    </section>
 
-
-            <div class="round round-three">
-                <div class="round-details">Eastern Conference Finals<br/></div>
-                <ul class="matchup">
-                    <li class="team2 team-top lock"><span class="team-name"></span><span class="value" style="display:none;" id="E31" onclick="inputFunc('#E31I')">0</span>
-                        <input class="scoreinput2" id="E31I" onchange="outputFunc('#E31', '#E31I', '.east')" type="number"></li>
-                    <li class="team2 team-bottom lock"><span class="team-name"></span><span class="value" style="display:none;" id="E32" onclick="inputFunc('#E32I')">0</span>
-                        <input class="scoreinput2" id="E32I" onchange="outputFunc('#E32', '#E32I', '.east')" type="number"></li>
-                </ul>
-            </div>  <!-- END ROUND THREE -->
-
-            <div class="round round-two">
-                <div class="round-details">Eastern Conference Semi-Finals<br/></div>
-                <ul class="matchup">
-                    <li class="team2 team-top lock"><span class="team-name"></span><span class="value" style="display:none;" id="E21" onclick="inputFunc('#E21I')">0</span>
-                        <input class="scoreinput2" id="E21I" onchange="outputFunc('#E21', '#E21I', '.east')" type="number"></li>
-                    <li class="team2 team-bottom lock"><span class="team-name"></span><span class="value" style="display:none;" id="E22" onclick="inputFunc('#E22I')">0</span>
-                        <input class="scoreinput2" id="E22I" onchange="outputFunc('#E22', '#E22I', '.east')" type="number"></li>
-                </ul>
-                <ul class="matchup">
-                    <li class="team2 team-top lock"><span class="team-name"></span><span class="value" style="display:none;" id="E23" onclick="inputFunc('#E23I')">0</span>
-                        <input class="scoreinput2" id="E23I" onchange="outputFunc('#E23', '#E23I', '.east')" type="number"></li>
-                    <li class="team2 team-bottom lock"><span class="team-name"></span><span class="value" style="display:none;" id="E24" onclick="inputFunc('#E24I')">0</span>
-                        <input class="scoreinput2" id="E24I" onchange="outputFunc('#E24', '#E24I', '.east')" type="number"></li>
-                </ul>
-            </div>  <!-- END ROUND TWO -->
-
-            <div class="round round-one current">
-                <div class="round-details">Eastern Conference Round 1<br/></div>
-                <ul class="matchup">
-                    <li class="team2 team-top"><span class="team-name">BUCKS</span><span class="value score2" id="E11" onclick="inputFunc('#E11I')">0</span>
-                        <input class="scoreinput2" id="E11I" onchange="outputFunc('#E11', '#E11I', '.east')" type="number"></li>
-                    <li class="team2 team-bottom"><span class="team-name">PISTONS</span><span class="value score2" id="E12" onclick="inputFunc('#E12I')">0</span>
-                        <input class="scoreinput2" id="E12I" onchange="outputFunc('#E12', '#E12I', '.east')" type="number"></li>
-                </ul>
-                <ul class="matchup">
-                    <li class="team2 team-top"><span class="team-name">CELTICS</span><span class="value score2" id="E13" onclick="inputFunc('#E13I')">0</span>
-                        <input class="scoreinput2" id="E13I" onchange="outputFunc('#E13', '#E13I', '.east')" type="number"></li>
-                    <li class="team2 team-bottom"><span class="team-name">PACERS</span><span class="value score2" id="E14" onclick="inputFunc('#E14I')">0</span>
-                        <input class="scoreinput2" id="E14I" onchange="outputFunc('#E14', '#E14I', '.east')" type="number"></li>
-                </ul>
-                <ul class="matchup">
-                    <li class="team2 team-top"><span class="team-name">76ERS</span><span class="value score2" id="E15" onclick="inputFunc('#E15I')">0</span>
-                        <input class="scoreinput2" id="E15I" onchange="outputFunc('#E15', '#E15I', '.east')" type="number"></li>
-                    <li class="team2 team-bottom"><span class="team-name">NETS</span><span class="value score2" id="E16" onclick="inputFunc('#E16I')">0</span>
-                        <input class="scoreinput2" id="E16I" onchange="outputFunc('#E16', '#E16I', '.east')" type="number"></li>
-                </ul>
-                <ul class="matchup">
-                    <li class="team2 team-top"><span class="team-name">RAPTORS</span><span class="value score2" id="E17" onclick="inputFunc('#E17I')">0</span>
-                        <input class="scoreinput2" id="E17I" onchange="outputFunc('#E17', '#E17I', '.east')" type="number"></li>
-                    <li class="team2 team-bottom"><span class="team-name">MAGIC</span><span class="value score2" id="E18" onclick="inputFunc('#E18I')">0</span>
-                        <input class="scoreinput2" id="E18I" onchange="outputFunc('#E18', '#E18I', '.east')" type="number"></li>
-                </ul>
-            </div>  <!-- END ROUND ONE -->
+    <div class="modal" id="stats">
+        <div class="formbox">
+            <h1>Predictions Submitted!</h1>
+            <p>Your predictions have been submitted!</p>
+            <button onclick="location.href='/main';" class="ret">Return to Menu</button>
+            <button onclick="document.getElementById('stats').style.display='none'" class="sub">Change Your Predictions</button>
         </div>
     </div>
-</section>
+
+
+</div>
+
 
 <script type="text/javascript" th:src="@{/js/bracket.js}"></script>
 

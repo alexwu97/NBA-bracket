@@ -4,29 +4,238 @@
     <title>NBA Bracket</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script|Herr+Von+Muellerhoff' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Istok+Web|Roboto+Condensed:700' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" type="text/css" href="css/main.css">
+
+
 </head>
 <body>
-<div class="back">
+<header>
+    <h1>NBA Bracket</h1>
+</header>
+    <div class="banner">
+        <p></p>
+    </div>
     <div class="main-page">
-        <h1>Current Playoff Status:</h1>
-        <img class="live-bracket" src="https://s.yimg.com/ny/api/res/1.2/Se4R6mBLItgoFLb7cmDQSA--~A/YXBwaWQ9aGlnaGxhbmRlcjtzbT0xO3c9ODAw/https://media.zenfs.com/en-US/article.sportingnews.com/e79b0179dc65b08c8f703b2af21c9be3" alt="bracket">
-        <p>Predict your own NBA Playoffs:</p>
-        <form action="/bracket">
-            <button>Predict the Playoffs!</button>
-        </form>
+        <div class="current-container">
+        <h1 style="font-family: 'Roboto Condensed', sans-serif; color: #2C7399;">Current Playoff Status:</h1>
+        <div class="container">
 
-        <p>Join other friends and see who has the best predictions!</p>
-        <button>Create a Group</button>
-        <p>Look up others' NBA playoff predictions!</p>
+            <div class="split west">
+                <div class="round round-one">
+                    <div class="round-details">Western Conference Round 1<br/></div>
+                    <ul class="matchup">
+                        <li class="team team-top" id="gsw">
+                            <span class="team-name">WARRIORS</span>
+                            <span class="score">4</span>
+                        </li>
+                        <li class="team team-bottom" id="lac">
+                            <span class="team-name">CLIPPERS</span>
+                            <span class="score">2</span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top" id="hsr">
+                            <span class="team-name">ROCKETS</span>
+                            <span class="score">4</span>
+                        </li>
+                        <li class="team team-bottom" id="uta">
+                            <span class="team-name">JAZZ</span>
+                            <span class="score">1</span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top" id="ptb">
+                            <span class="team-name">TRAIL BLAZERS</span>
+                            <span class="score">3</span>
+                        </li>
+                        <li class="team team-bottom" id="okc">
+                            <span class="team-name">THUNDER</span>
+                            <span class="score">1</span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top" id="dvn">
+                            <span class="team-name">NUGGETS</span>
+                            <span class="score">2</span>
+                        </li>
+                        <li class="team team-bottom" id="sas">
+                            <span class="team-name">SPURS</span>
+                            <span class="score">2</span>
+                        </li>
+                    </ul>
+
+                </div>  <!-- END ROUND ONE -->
+
+                <div class="round round-two">
+                    <div class="round-details">Western Conference Semi-Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team team-top lock" id="gsw">
+                            <span class="team-name">WARRIORS</span>
+                            <span class="score">0</span>
+                        </li>
+                        <li class="team team-bottom lock" id="hsr">
+                            <span class="team-name">ROCKETS</span>
+                            <span class="score">0</span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                        <li class="team team-bottom lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND TWO -->
+
+                <div class="round round-three">
+                    <div class="round-details">Western Conference Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team team-top lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                        <li class="team team-bottom lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>  <!-- END ROUND THREE -->
+
+            <div class="champion west east">
+                <div class="final">
+                    <i class="fa fa-trophy"></i>
+                    <div class="round-details">championship <br/></div>
+                    <ul class ="matchup championship">
+                        <li class="team team-top champ lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                        <li class="team team-bottom champ lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="split east">
+
+
+                <div class="round round-three">
+                    <div class="round-details">Eastern Conference Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team2 team-top lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                        <li class="team2 team-bottom lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND THREE -->
+
+                <div class="round round-two">
+                    <div class="round-details">Eastern Conference Semi-Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team2 team-top lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                        <li class="team2 team-bottom lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team2 team-top lock">
+                            <span class="team-name"></span>
+                            <span></span>
+                        </li>
+                        <li class="team2 team-bottom lock" id="tra">
+                            <span class="team-name">RAPTORS</span>
+                            <span class="score2">0</span>
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND TWO -->
+
+                <div class="round round-one current">
+                    <div class="round-details">Eastern Conference Round 1<br/></div>
+                    <ul class="matchup">
+                        <li class="team2 team-top" id="mwb">
+                            <span class="team-name">BUCKS</span>
+                            <span class="score2">3</span>
+                        </li>
+                        <li class="team2 team-bottom" id="dtp">
+                            <span class="team-name">PISTONS</span>
+                            <span class="score2">0</span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+
+                        <li class="team2 team-top" id="boc">
+                            <span class="team-name">CELTICS</span>
+                            <span class="score2">2</span>
+                        </li>
+
+                        <li class="team2 team-bottom" id="inp">
+                            <span class="team-name">PACERS</span>
+                            <span class="score2">0</span>
+                        </li>
+
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team2 team-top" id="phi">
+                            <span class="team-name">76ERS</span>
+                            <span class="score2">1</span>
+                        </li>
+                        <li class="team2 team-bottom" id="bkn">
+                            <span class="team-name">NETS</span>
+                            <span class="score2">1</span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team2 team-top" id="tra">
+                            <span class="team-name">RAPTORS</span>
+                            <span class="score2">4</span>
+                        </li>
+                        <li class="team2 team-bottom" id="orl">
+                            <span class="team-name">MAGIC</span>
+                            <span class="score2">1</span>
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND ONE -->
+            </div>
+        </div>
+        </div>
+        <div class="nba-container">
+            <p>Start Here and Predict Your Own NBA Playoffs!</p>
+            <img src="https://image.flaticon.com/icons/svg/521/521758.svg" style="width:40px; height:40px;"><br>
+            <button onclick="location.href='/bracket';" class="predict-button">Predict Here</button>
+        </div>
+        <div class="lookup-container">
+            <p>Take a Look at Other People's NBA Playoff Predictions!</p>
+            <img src="https://image.flaticon.com/icons/svg/151/151917.svg" style="width:40px; height:40px;"><br>
+            <button class="lookup-button">Other's Playoff Predictions</button>
+        </div>
+
+
 
 
 
         <p th:text="${portfolio}" />
 
     </div>
-
-</div>
 
 
 

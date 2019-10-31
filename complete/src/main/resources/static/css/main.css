@@ -1,27 +1,33 @@
 body{
-
-    background: url("https://cnet3.cbsistatic.com/img/NcdO0FZGyUyqnS5lJG74tO9HOwI=/1600x900/2019/02/13/3bd81000-0aa7-41d0-8eba-4682d8e26521/all-star-starters-graphic.jpg") no-repeat center center fixed;
+    font-family: "Arial Black", Gadget, sans-serif;
+    background: url("http://getwallpapers.com/wallpaper/full/b/f/b/661242.jpg") no-repeat center center fixed;
     background-size: cover;
-    font-family: "Trebuchet MS", Times, serif;
+    margin: 0;
 }
 
-.back {
-    position: absolute;
+header{
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background: #084E8A;
+    position: fixed;
     top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
 
+}
+
+h1{
+    margin:0;
 }
 
 .main-page{
-    display: table;
-    width: 1500px;
+    width:1500px;
     height: 100%;
-    background-color: white;
     margin-left: auto;
     margin-right: auto;
-    background-color: rgba(20, 68, 64, 0.8);
+    margin-top: 80px;
 
 }
 
@@ -33,8 +39,426 @@ body{
 
 }
 
-@media screen and (max-width: 1125px){
-    .main-page{
-        width: 80%;
-    }
+.nba-container{
+    font-weight: 900;
+    font-size: 120%;
+    text-align: center;
+    float: left;
+    width: 21%;
+    background-color: #EBF5FA;
+    color: #2C7399;
+    height: 376px;
+    margin: 0 1% 17px 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.nba-container p, .lookup-container p{
+    padding: 30% 0 0 0;
+}
+
+.predict-button {
+    font-family: "Arial Black", Gadget, sans-serif;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #084E8A;
+}
+
+.predict-button:hover {
+  background-color:#006FBB;
+  color: black;
+}
+
+.lookup-container {
+    font-weight: 900;
+    font-size: 120%;
+    float: left;
+    width: 21%;
+    text-align: center;
+    vertical-align: middle;
+    background-color: #EBF5FA;
+    color: #2C7399;
+    height: 377px;
+    margin: 18px 1% 0 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.lookup-button {
+    font-family: "Arial Black", Gadget, sans-serif;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #084E8A;
+}
+.lookup-button:hover{
+    color: black;
+ background-color: #006FBB;
+
+}
+
+
+.current-container{
+    float: left;
+    background-color: #EBF5FA;
+    width: 75%;
+    margin: 0 1% 0 1%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.container {
+    padding: 15px;
+    margin: 0 auto;
+    display:block;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-direction:row;
+    flex-direction: row;
+}
+
+.split {
+    display:block;
+    float:left;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display:flex;
+    width: 42%;
+    -webkit-flex-direction:row;
+    -moz-flex-direction:row;
+    flex-direction:row;
+}
+
+.champion {
+    float:left;
+    display:block;
+    width: 16%;
+    -webkit-flex-direction:row;
+    flex-direction:row;
+    -webkit-align-self:center;
+    align-self:center;
+    margin-top: -115px;
+    text-align: center;
+    padding: 230px 0\9;
+}
+
+.champion i {
+    color: #a0a6a8;
+    font-size: 45px;
+    padding: 10px 0;
+}
+
+.round {
+    display:block;
+    float:left;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display:flex;
+    -webkit-flex-direction:column;
+    flex-direction:column;
+    width:95%;
+    width:30.8333%\9;
+}
+
+
+.west .round {
+    margin: 0 2.5% 0 0;
+}
+
+.east .round {
+    margin: 0 0 0 2.5%;
+}
+
+.matchup {
+    margin:40px 0 50px 0;
+    width: 100%;
+    padding: 10px 0;
+    height:60px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
+}
+
+.score {
+    text-transform: uppercase;
+    float: right;
+    font-size: 1em;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
+    position: absolute;
+    right: 5px;
+}
+
+.score2 {
+    text-transform: uppercase;
+    float: right;
+    font-size: 1em;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
+    position: absolute;
+    left: 5px;
+}
+
+#gsw {
+    background: url("http://content.sportslogos.net/logos/6/235/full/4449_golden_state_warriors-primary_dark-2020.png") center;
+    background-size: cover;
+    position: relative;
+}
+
+#lac {
+    background: url("http://content.sportslogos.net/logos/6/236/full/5529_los_angeles_clippers-jersey-2016.png") center;
+    background-size: cover;
+    position: relative;
+}
+
+#hsr {
+    background: url("http://content.sportslogos.net/logos/6/230/full/9260_houston_rockets-alternate-2020.png") center;
+    background-size: cover;
+    position: relative;
+}
+
+.team:before, .team2:before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(255,255,255, 0.2);
+}
+
+#uta {
+    background: url("http://content.sportslogos.net/logos/6/234/full/1734_utah_jazz-primary_on_dark-2017.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#ptb{
+    background: url("http://content.sportslogos.net/logos/6/239/full/2264_portland_trail_blazers-primary_on_dark-2005.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#okc{
+    background: url("http://content.sportslogos.net/logos/6/2687/full/qu0jvjrn2w1gjc5pn9qcpnlrg.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#dvn{
+    background: url("http://content.sportslogos.net/logos/6/229/full/1708_denver_nuggets-primary_on_dark-2019.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#sas{
+    background: url("http://content.sportslogos.net/logos/6/233/full/2029_san_antonio_spurs-primary_on_dark-2003.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#mwb{
+    background: url("http://content.sportslogos.net/logos/6/225/full/8275_milwaukee_bucks-primary-2016.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#dtp{
+    background: url("http://content.sportslogos.net/logos/6/223/full/6107_detroit_pistons-primary_on_dark-2018.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#boc{
+    background: url("http://content.sportslogos.net/logos/6/213/full/4548_boston_celtics-primary_on_dark-1997.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#inp{
+    background: url("http://content.sportslogos.net/logos/6/224/full/1059_indiana_pacers-primary_on_dark-2018.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#phi{
+    background: url("http://content.sportslogos.net/logos/6/218/full/3101_philadelphia_76ers-primary_dark-1978.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#bkn{
+    background: url("http://content.sportslogos.net/logos/6/3786/full/6332_brooklyn_nets-primary_on_dark-2013.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#tra{
+    background: url("http://content.sportslogos.net/logos/6/227/full/5082_toronto_raptors-primary_on_dark-2016.png")center;
+    background-size: cover;
+    position: relative;
+}
+
+#orl{
+    background: url("http://content.sportslogos.net/logos/6/217/full/wd9ic7qafgfb0yxs7tem7n5g4.gif")center;
+    background-size: cover;
+    position: relative;
+}
+
+.team {
+    padding: 0 5px;
+    border: solid 1px black;
+    margin: 3px 0;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    position: relative;
+    font-size: 0.8em;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
+}
+
+.team2 {
+    padding: 0 5px;
+    border: solid 1px black;
+    margin: 3px 0;
+    height: 50px;
+    line-height: 50px;
+    overflow: hidden;
+    position: relative;
+    text-align: right;
+    font-size: 0.8em;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
+
+}
+
+.round-two .matchup {
+    margin:30px 0 50px 0;
+    height: 50px;
+    padding: 105px 0;
+}
+
+.round-three .matchup {
+    margin:60px 0 50px 0;
+    height: 0px;
+    padding: 245px 0;
+}
+
+.round-details {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 13px;
+    color: #2C7399;
+    text-transform: uppercase;
+    text-align: center;
+    height: 40px;
+}
+
+.champion li, .round li {
+    background-color: #fff;
+    box-shadow: none;
+}
+
+.share .container {
+    margin: 0 auto;
+    text-align:
+    center;
+}
+
+.share-icon {
+    font-size: 24px;
+    color: #fff;
+    padding: 25px;
+}
+
+.share-wrap {
+    max-width: 1100px;
+    text-align: center;
+    margin: 60px auto;
+}
+
+.final {margin: 4.5em 0;}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+
+  50% {
+    -webkit-transform: scale(1.3);
+    -ms-transform: scale(1.3);
+    transform: scale(1.3);
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    -ms-transform: scale(1);
+    transform: scale(1);
+  }
+}
+
+.share-icon {
+    color: #fff;
+    opacity: 0.35;
+}
+
+.share-icon:hover {
+    opacity:1;
+    -webkit-animation: pulse 0.5s;
+    animation: pulse 0.5s;
+}
+
+
+@media screen and (max-width: 980px) {
+  #bracket{
+    margin-left:0;
+    margin-right:0;
+  }
+  .container {-webkit-flex-direction:column;-moz-flex-direction:column;flex-direction:column;}
+  .split, .champion {width: 90%;margin: 35px 5%;}
+  .champion {-webkit-box-ordinal-group:3;-moz-box-ordinal-group:3;-ms-flex-order:3;-webkit-order:3;order:3;}
+  .split {border-bottom: 1px solid #b6b6b6; padding-bottom: 20px;}
+}
+
+
+@media screen and (max-width: 400px) {
+
+  .split {width: 95%;margin: 25px 2.5%;}
+  .round {width:21%;}
+  .current {-webkit-flex-grow:1;-moz-flex-grow:1;flex-grow:1;}
+  .round-details {font-size: 90%;}
+
+
+}
+
+input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.team-name{
+    position: relative;
 }

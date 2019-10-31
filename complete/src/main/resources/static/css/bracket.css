@@ -1,21 +1,47 @@
 body {
-    font-family: 'Istok Web', sans-serif;
+    font-family: "Arial Black", Gadget, sans-serif;
+    background: url("http://getwallpapers.com/wallpaper/full/b/f/b/661242.jpg") no-repeat center center fixed;
     background-size: cover;
-    min-height: 100%;
     margin: 0;
 }
 
+header{
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    overflow: hidden;
+    background: #084E8A;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+h1{
+    margin:0;
+}
+
+.main-body{
+    width: 1500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 80px;
+}
+
 #bracket {
+    width: 100%;
     overflow:hidden;
-    background-color: #e1e1e1;
-    background-color:rgba(225,225,225,0.9);
+    background-color: #EBF5FA;
     padding-top: 20px;
     font-size: 12px;
-    padding: 40px 0;
+    padding: 20px 0 0 0;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
 }
 
 .container {
-    max-width: 1100px;
+    font-size: 140%;
+    padding: 15px;
     margin: 0 auto;
     display:block;
     display: -webkit-box;
@@ -50,15 +76,14 @@ body {
     flex-direction:row;
     -webkit-align-self:center;
     align-self:center;
-    margin-top: -65px;
+    margin-top: -115px;
     text-align: center;
-    padding: 230px 0\9;
 }
 
 .champion i {
     color: #a0a6a8;
     font-size: 45px;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 .round {
@@ -75,8 +100,6 @@ body {
     width:30.8333%\9;
 }
 
-.east {}
-
 .west .round {
     margin: 0 2.5% 0 0;
 }
@@ -85,63 +108,173 @@ body {
     margin: 0 0 0 2.5%;
 }
 
-.matchup {margin:0;width: 100%;padding: 10px 0;height:60px;-webkit-transition: all 0.2s;transition: all 0.2s;}
-
-.score {
-    font-size: 11px;
-    text-transform: uppercase;
-    float: right;
-    color: #2C7399;
-    font-weight: bold;
-    font-family: 'Roboto Condensed', sans-serif;
-    position: absolute;
-    right: 5px;
-    cursor: pointer;
+.matchup {
+    margin: 20px 0 40px 0;
+    width: 100%;
+    padding: 10px 0;
+    height: 100px;
+    -webkit-transition: all 0.2s;
+    transition: all 0.2s;
 }
 
-.score2 {
-    font-size: 11px;
-    text-transform: uppercase;
-    float: right;
-    color: #2C7399;
-    font-weight: bold;
-    font-family: 'Roboto Condensed', sans-serif;
+
+#gsw {
+    background: url("http://content.sportslogos.net/logos/6/235/full/4449_golden_state_warriors-primary_dark-2020.png") center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#lac {
+    background: url("http://content.sportslogos.net/logos/6/236/full/5529_los_angeles_clippers-jersey-2016.png") center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#hsr {
+    background: url("http://content.sportslogos.net/logos/6/230/full/9260_houston_rockets-alternate-2020.png") center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#uta {
+    background: url("http://content.sportslogos.net/logos/6/234/full/1734_utah_jazz-primary_on_dark-2017.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#ptb{
+    background: url("http://content.sportslogos.net/logos/6/239/full/2264_portland_trail_blazers-primary_on_dark-2005.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#okc{
+    background: url("http://content.sportslogos.net/logos/6/2687/full/qu0jvjrn2w1gjc5pn9qcpnlrg.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#dvn{
+    background: url("http://content.sportslogos.net/logos/6/229/full/1708_denver_nuggets-primary_on_dark-2019.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#sas{
+    background: url("http://content.sportslogos.net/logos/6/233/full/2029_san_antonio_spurs-primary_on_dark-2003.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#mwb{
+    background: url("http://content.sportslogos.net/logos/6/225/full/8275_milwaukee_bucks-primary-2016.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#dtp{
+    background: url("http://content.sportslogos.net/logos/6/223/full/6107_detroit_pistons-primary_on_dark-2018.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#boc{
+    background: url("http://content.sportslogos.net/logos/6/213/full/4548_boston_celtics-primary_on_dark-1997.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#inp{
+    background: url("http://content.sportslogos.net/logos/6/224/full/1059_indiana_pacers-primary_on_dark-2018.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#phi{
+    background: url("http://content.sportslogos.net/logos/6/218/full/3101_philadelphia_76ers-primary_dark-1978.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#bkn{
+    background: url("http://content.sportslogos.net/logos/6/3786/full/6332_brooklyn_nets-primary_on_dark-2013.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#tra{
+    background: url("http://content.sportslogos.net/logos/6/227/full/5082_toronto_raptors-primary_on_dark-2016.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#orl{
+    background: url("http://content.sportslogos.net/logos/6/217/full/wd9ic7qafgfb0yxs7tem7n5g4.gif")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+.team:before, .team2:before{
+    content: '';
     position: absolute;
-    left: 5px;
-    cursor: pointer;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    background: rgba(255,255,255,0.2);
 }
 
 .team {
     padding: 0 5px;
+    border: solid 1px black;
     margin: 3px 0;
-    height: 25px;
-    line-height: 25px;
-    white-space: nowrap;
+    height: 50px;
+    line-height: 50px;
     overflow: hidden;
     position: relative;
+    font-size: 0.8em;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
 }
 
 .team2 {
     padding: 0 5px;
+    border: solid 1px black;
     margin: 3px 0;
-    height: 25px;
-    line-height: 25px;
-    white-space: nowrap;
+    height: 50px;
+    line-height: 50px;
     overflow: hidden;
     position: relative;
     text-align: right;
+    font-size: 0.8em;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
 }
 
 .round-two .matchup {
-    margin:0;
-    height: 60px;
-    padding: 50px 0;
+    margin: 20px 0 40px 0;
+    height: 100px;
+    padding: 100px 0;
 }
 
 .round-three .matchup {
-    margin:0;
-    height: 60px;
-    padding: 130px 0;
+    margin: 20px 0 40px 0;
+    height: 100px;
+    padding: 280px 0;
 }
 
 .round-details {
@@ -160,29 +293,6 @@ body {
 
 .lock {
     opacity: 0.45;
-}
-
-.vote-options {
-    display: block;
-    height: 52px;
-}
-
-.share .container {
-    margin: 0 auto;
-    text-align:
-    center;
-}
-
-.share-icon {
-    font-size: 24px;
-    color: #fff;
-    padding: 25px;
-}
-
-.share-wrap {
-    max-width: 1100px;
-    text-align: center;
-    margin: 60px auto;
 }
 
 .final {margin: 4.5em 0;}
@@ -224,16 +334,6 @@ body {
   }
 }
 
-.share-icon {
-    color: #fff;
-    opacity: 0.35;
-}
-
-.share-icon:hover {
-    opacity:1;
-    -webkit-animation: pulse 0.5s;
-    animation: pulse 0.5s;
-}
 
 
 @media screen and (min-width: 981px) and (max-width: 1099px) {
@@ -244,40 +344,151 @@ body {
 
 }
 
-@media screen and (max-width: 980px) {
+@media screen and (max-width: 600px) {
+  .main-body{
+    width: 600px;
+    margin-left:0;
+    margin-right:0;
+  }
   .container {-webkit-flex-direction:column;-moz-flex-direction:column;flex-direction:column;}
   .split, .champion {width: 90%;margin: 35px 5%;}
   .champion {-webkit-box-ordinal-group:3;-moz-box-ordinal-group:3;-ms-flex-order:3;-webkit-order:3;order:3;}
   .split {border-bottom: 1px solid #b6b6b6; padding-bottom: 20px;}
 }
 
+.scoreinput:hover {
+    background-color: white;
+    border-left: solid black 2px;
+    color: black; text-shadow: none;
+    transition: background .5s;
 
-@media screen and (max-width: 400px) {
+}
 
-  .split {width: 95%;margin: 25px 2.5%;}
-  .round {width:21%;}
-  .current {-webkit-flex-grow:1;-moz-flex-grow:1;flex-grow:1;}
-  .round-details {font-size: 90%;}
+.scoreinput:focus{
+    background-color: white;
+    border-left: solid black 2px;
+    color: black; text-shadow: none;
+    transition: background .5s;
 
+}
 
+.scoreinput2:hover {
+    background-color: white;
+    border-right: solid black 2px;
+    color: black; text-shadow: none;
+    transition: background .5s;
+}
+
+.scoreinput2:focus{
+    background-color: white;
+    border-right: solid black 2px;
+    color: black; text-shadow: none;
+    transition: background .5s;
 }
 
 .scoreinput {
-    display: none;
-    width: 12px;
-    margin-top: 1.5%;
-    position:absolute;
-    right: 1px;
+    border:none;
+    width: 29px;
+    height: 100%;
+    position: absolute;
+    right: 0;
+    top: 0;
+    font-size: 1em;
+    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif;
+    background-color: transparent;
+    cursor: pointer;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
 }
 
 .scoreinput2 {
-    display: none;
-    width: 12px;
-    margin-top: 1.5%;
+    border: none;
+    width: 29px;
+    height: 100%;
     position:absolute;
-    left: 1px;
+    top: 0;
+    left: 0;
+    font-size: 1em;
+    text-align: center;
+    font-family: "Arial Black", Gadget, sans-serif;
+    background-color: transparent;
+    cursor: pointer;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
 }
 
 input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
+}
+
+.team-name{
+    position: relative;
+}
+
+.IO{
+    margin: 15px 0 15px 0;
+    padding: 20px;
+    float: right;
+    background-color: #EBF5FA;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+    font-family: "Arial Black", Gadget, sans-serif;
+    border: solid;
+    width: 300px;
+    padding: 25px 0;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.ret{
+    border-color: #BF0711;
+    background-color: #BF0711;
+    margin: 0 10px 0 0;
+}
+
+.ret:hover{
+    border-color: #DE3618;
+    background-color: #DE3618;
+}
+
+.sub{
+    border-color: #108043;
+    background-color: #108043;
+    margin: 0 0 0 10px;
+}
+
+.sub:hover{
+    border-color: #50B83C;
+    background-color: #50B83C;
+}
+
+.modal {
+    display: none;
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    padding-top: 200px;
+    text-align: center;
+
+}
+
+.formbox {
+    background-color: #fefefe;
+    margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    border: 1px solid #888;
+    width: 700px; /* Could be more or less, depending on screen size */
+    padding: 30px 20px 30px 20px;
+    border-radius: 4.34%/10%;
+    -webkit-animation: animatezoom 0.6s;
+    animation: animatezoom 0.6s
+    text-align: center;
 }
