@@ -15,6 +15,7 @@ header{
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 }
 
 h1{
@@ -483,11 +484,13 @@ button {
 
 .formbox {
     background-color: #fefefe;
-    margin: 10% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+    margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
     border: 1px solid #888;
     width: 700px; /* Could be more or less, depending on screen size */
     padding: 30px 20px 30px 20px;
-    border-radius: 4.34%/10%;
+    border-radius: 35px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: x-large;
     -webkit-animation: animatezoom 0.6s;
     animation: animatezoom 0.6s
     text-align: center;

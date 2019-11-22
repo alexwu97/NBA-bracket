@@ -90,7 +90,7 @@ function testFunct(){
     for (j=0; j<15; j++){
         topTeam.Num = parseInt($(".matchup").eq(j).children().eq(0).children(".value").val());
         botTeam.Num = parseInt($(".matchup").eq(j).children().eq(1).children(".value").val());
-        if (topTeam.Num < 4 && botTeam.Num < 4){
+        if ((topTeam.Num < 4 && botTeam.Num < 4) || (topTeam.Num == 4 && botTeam.Num == 4)){
             alert("Please fill in all the scores");
             return ;
         }
@@ -104,7 +104,11 @@ function testFunct(){
             score : $(".matchup").children().eq(i).children(".value").val()
          });
     }
+    testAjax(responseBody);
 
+}
+
+function testAjax(responseBody){
     $.ajax({
         type: "POST",
         url: "/bracket",
@@ -112,6 +116,8 @@ function testFunct(){
         contentType: "application/json",
         success: function (result){
             hideFunct('stats');
+            console.log(result.number);
+            $('#stats > div > p:eq(1)').text("Your reference number is: " + result.number);
 
         },
         error: function(){
@@ -119,6 +125,7 @@ function testFunct(){
         }
     });
 }
+
 
 
 function hideFunct(x){

@@ -15,6 +15,7 @@ header{
     position: fixed;
     top: 0;
     width: 100%;
+    z-index: 1;
 
 }
 
@@ -66,9 +67,19 @@ h1{
     background-color: #084E8A;
 }
 
-.predict-button:hover {
+.predict-button:hover, .lookup-button:hover, .reveal-button:hover {
   background-color:#006FBB;
   color: black;
+}
+
+.reveal-button {
+    font-family: "Arial Black", Gadget, sans-serif;
+    padding: 15px 30px;
+    margin-top: 20px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    background-color: #084E8A;
 }
 
 .lookup-container {
@@ -94,33 +105,57 @@ h1{
     cursor: pointer;
     background-color: #084E8A;
 }
-.lookup-button:hover{
-    color: black;
- background-color: #006FBB;
-
-}
-
 
 .current-container{
     float: left;
-    background-color: #EBF5FA;
+    background: url("https://www.vox360.com/wp-content/uploads/2019/05/Website-Background-Web.jpg") no-repeat center center;
+    background-size: cover;
     width: 75%;
     margin: 0 1% 0 1%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    height: 788px;
+}
+
+.center{
+    position: relative;
+    top: 350px;
+    text-align: center;
+
+}
+
+.center-positioning{
+    transform: translate(-415.67px, -350px);
+    transition:  all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.center h1{
+    font-family: 'Roboto Condensed', sans-serif;
+    color: #2C7399;
 }
 
 .container {
-    padding: 15px;
-    margin: 0 auto;
-    display:block;
-    display: -webkit-box;
-    display: -moz-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
-    display: -webkit-flex;
-    display: flex;
-    -webkit-flex-direction:row;
-    flex-direction: row;
+    visibility: hidden;
+    opacity: 0;
+
+        padding: 15px;
+        margin: 0 auto;
+            display:block;
+            display: -webkit-box;
+            display: -moz-box;
+            display: -ms-flexbox;
+            display: -webkit-flex;
+            display: -webkit-flex;
+            display: flex;
+                -webkit-flex-direction:row;
+                flex-direction: row;
+
+}
+
+.container-reveal{
+    visibility: visible;
+    opacity: 1;
+    transition: visibility 0s, opacity 1s linear;
+    transition-delay: 0.7s;
 }
 
 .split {
@@ -364,24 +399,6 @@ h1{
     box-shadow: none;
 }
 
-.share .container {
-    margin: 0 auto;
-    text-align:
-    center;
-}
-
-.share-icon {
-    font-size: 24px;
-    color: #fff;
-    padding: 25px;
-}
-
-.share-wrap {
-    max-width: 1100px;
-    text-align: center;
-    margin: 60px auto;
-}
-
 .final {margin: 4.5em 0;}
 
 @-webkit-keyframes pulse {
@@ -420,18 +437,6 @@ h1{
     transform: scale(1);
   }
 }
-
-.share-icon {
-    color: #fff;
-    opacity: 0.35;
-}
-
-.share-icon:hover {
-    opacity:1;
-    -webkit-animation: pulse 0.5s;
-    animation: pulse 0.5s;
-}
-
 
 @media screen and (max-width: 980px) {
   #bracket{

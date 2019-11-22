@@ -14,11 +14,14 @@ import java.net.URI;
 import java.sql.*;
 import java.util.List;
 import java.util.Map;
+import java.util.*;
 
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
 public class GreetingController {
+
+    Refnum reference_num = new Refnum(2);
 
     @RequestMapping(value = "/groot", method = RequestMethod.POST)
     @ResponseBody
@@ -90,9 +93,42 @@ public class GreetingController {
     public String bracketGet(){return "bracket";}
 
     @RequestMapping(value = "/bracket", method = RequestMethod.POST)
-    public ResponseEntity<List<Map<String, String>>> bracketPost(@RequestBody List<Map<String, String>> prediction, Model model){
+    public ResponseEntity<Refnum> bracketPost(@RequestBody List<Map<String, String>> prediction, Model model){
         System.out.println(prediction.get(0).get("team"));
-        return new ResponseEntity<>(prediction, HttpStatus.OK);
+
+        String connectionUrl = "jdbc:mysql://localhost:3306/nbabracket?serverTimezone=UTC";
+
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            Connection con = DriverManager.getConnection(connectionUrl, "root", "password");
+
+            String query = "insert into predictions (userID, predictionNo, team1, score1, team2, score2, team3, score3," +
+                    " team4, score4, team5, score5, team6, score6, team7, score7, team8, score8, team9, score9," +
+                    " team10, score10, team11, score11, team12, score12, team13, score13, team14, score14, team15, score15," +
+                    " team16, score16, team17, score17, team18, score18, team19, score19, team20, score20, team21, score21," +
+                    " team22, score22, team23, score23, team24, score24, team25, score25, team26, score26, team27, score27," +
+                    " team28, score28, team29, score29, team30, score30)" + "values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?" +
+                    ", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?" +
+                    ", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
+
+            PreparedStatement preparedStmt = con.prepareStatement(query);
+            preparedStmt.setString(1,"hey");
+            reference_num.incrementNumber();
+            preparedStmt.setInt(2, reference_num.getNumber());
+            for (int i = 0; i < 30; i++){
+                preparedStmt.setString(i*2 + 3, prediction.get(i).get("team"));
+                preparedStmt.setString(i*2 + 4, prediction.get(i).get("score"));
+
+
+            }
+            preparedStmt.execute();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+        return new ResponseEntity<>(reference_num, HttpStatus.OK);
     }
 
 }
