@@ -1,3 +1,4 @@
+//ensures one input is selected at a time
 function outputFunc(inputID, side){
     if ($(inputID).val() == ""){
         $(inputID).val("0");
@@ -58,6 +59,7 @@ function nextLvlCheck(side){
 
 }
 
+//updates team in next tourny level
 function bracketAddition(side, n, type, advTeam, logo){
     $(side).children().children(".matchup").children().eq(n).children(".team-name").text(advTeam);
     $(side).children().children(".matchup").children().eq(n).attr('id', logo);
@@ -85,6 +87,7 @@ function bracketRemoval(side, n, type){
     $(side).children().children(".matchup").children().eq(n).attr('id', "");
 }
 
+//checks if everything is filled in before submission
 function testFunct(){
     var j;
     for (j=0; j<15; j++){
@@ -108,6 +111,7 @@ function testFunct(){
 
 }
 
+//sends prediction to backend
 function testAjax(responseBody){
     $.ajax({
         type: "POST",
