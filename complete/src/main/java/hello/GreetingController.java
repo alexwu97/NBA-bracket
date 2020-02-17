@@ -22,29 +22,12 @@ import static org.springframework.web.bind.annotation.RequestMethod.POST;
 public class GreetingController {
 
     Refnum reference_num = new Refnum(2);
-
-    @RequestMapping(value = "/groot", method = RequestMethod.POST)
-    @ResponseBody
-    public ResponseEntity<Portfolio> growt(@RequestBody Portfolio portfolio, Model model) {
-        //model.addAttribute(portfolio);
-        //JSONObject response = new JSONObject();
-        //System.out.println(portfolio.toString());
-        //HttpHeaders headers = new HttpHeaders();
-        //headers.add("Content-Type", "string");
-
-        return new ResponseEntity<>(portfolio, HttpStatus.OK);
-    }
-
-    @RequestMapping(value = "/greeting", method = RequestMethod.POST)
-    public String greet(Portfolio portfolio, Model model){
-        model.addAttribute("portfolio", portfolio);
-        System.out.println(portfolio.getfirstname());
-        return "greeting";
-    }
+    BracketUser user;
 
     @RequestMapping(value = "/main", method = RequestMethod.POST)
-    public String main(BracketUser user) {
-        System.out.println(user.getPassword());
+    public String main(BracketUser userlog) {
+
+        user = userlog;
 
         String connectionUrl = "jdbc:mysql://localhost:3306/nbabracket?serverTimezone=UTC";
 
@@ -93,8 +76,7 @@ public class GreetingController {
     public String bracketGet(){return "bracket";}
 
     @RequestMapping(value = "/bracket", method = RequestMethod.POST)
-    public ResponseEntity<Refnum> bracketPost(@RequestBody List<Map<String, String>> prediction, Model model){
-        System.out.println(prediction.get(0).get("team"));
+    public ResponseEntity<Refnum> bracketPost(@RequestBody List<Map<String, String>> prediction){
 
         String connectionUrl = "jdbc:mysql://localhost:3306/nbabracket?serverTimezone=UTC";
 
@@ -112,7 +94,7 @@ public class GreetingController {
                     ", ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";
 
             PreparedStatement preparedStmt = con.prepareStatement(query);
-            preparedStmt.setString(1,"hey");
+            preparedStmt.setString(1, user.getUserName());
             reference_num.incrementNumber();
             preparedStmt.setInt(2, reference_num.getNumber());
             for (int i = 0; i < 30; i++){
