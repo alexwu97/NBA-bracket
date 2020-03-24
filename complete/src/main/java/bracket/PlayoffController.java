@@ -1,4 +1,4 @@
-package hello;
+package bracket;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -15,7 +15,7 @@ public class PlayoffController {
 
     //on server startup, no checking for which prediction number was last stored in database.
     //for simplicity, the number is always restart to 0 on server restart for now
-    Refnum reference_num = new Refnum(0);
+    Refnum reference_num = Refnum.getInstance();
     BracketUser user;
 
     @RequestMapping(value = "/main", method = RequestMethod.POST)
@@ -30,6 +30,9 @@ public class PlayoffController {
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(connectionUrl, "root", "password");
 
+            //username and password are not truly implemented for now. As such:
+            //if username already exists in database, updates the password for that username,
+            //else add the new username in
             String query = "select * from users where userID = ?";
             PreparedStatement preparedStmt = con.prepareStatement(query);
             preparedStmt.setString(1, user.getUserName());
@@ -76,6 +79,7 @@ public class PlayoffController {
         String connectionUrl = "jdbc:mysql://localhost:3306/nbabracket?serverTimezone=UTC";
 
         try {
+            //stores the prediction data into the table
             Class.forName("com.mysql.cj.jdbc.Driver");
             Connection con = DriverManager.getConnection(connectionUrl, "root", "password");
 

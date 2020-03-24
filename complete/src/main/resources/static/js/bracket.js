@@ -146,6 +146,7 @@ function hideFunct(x){
 
 }
 
+//highlights the whole input value for user to start entering values right away
 $(function(){
     $(document).on('click', 'input[type=number]', function(){this.select();
     });

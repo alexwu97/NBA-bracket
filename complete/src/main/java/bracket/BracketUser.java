@@ -1,4 +1,4 @@
-package hello;
+package bracket;
 
 public class BracketUser {
     private String username;
@@ -17,7 +17,6 @@ public class BracketUser {
     }
 
     public String getPassword(){
-
         return this.password;
     }
 
