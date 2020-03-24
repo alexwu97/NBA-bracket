@@ -1,7 +1,29 @@
-== NBA Bracket Predictor 
-===== Full Stack Web App (JavaScript/Java)
+## NBA Bracket Predictor 
+#### Full Stack Web App (JavaScript/Java)
 
-![](https://user-images.githubusercontent.com/50474208/77380073-77dfb580-6d37-11ea-9829-7b312e58bf42.gif)
+A responsive web app that lets you predict the NBA playoff bracket
 
+#### Preview:
 
-![](https://user-images.githubusercontent.com/50474208/77380690-0274e480-6d39-11ea-8702-719130341afa.gif)
+The login screen and instructions:
+
+![login](https://user-images.githubusercontent.com/50474208/77386708-af0a9280-6d48-11ea-9754-358d33ace031.gif)
+
+Revealing the current status of the bracket:
+
+![preview](https://user-images.githubusercontent.com/50474208/77387213-06f5c900-6d4a-11ea-8bda-0b1d27ae07cc.gif)
+
+Predicting the bracket:
+
+![predict](https://user-images.githubusercontent.com/50474208/77387275-37d5fe00-6d4a-11ea-93d1-870df29552fa.gif)
+
+#### Instructions:
+
+The app uses Maven and can be opened in IDE by opening the pom.xml file located in NBA-bracket > complete > pom.xml
+Run the Application.java to start the app.
+
+As the app uses a MySQL database, you will need to either 
+1) Get MySQL, create a database and table, and modify the JDBC connection to connect to your database or
+2) Remove the database related section of the backend code in the PlayoffController.java
+
+The login is not implemented fully, therefore there is no need to register an account and you can enter anything in the username and password to proceed. You can also select the learn more button to learn how to enter your predictions in the bracket.
