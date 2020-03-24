@@ -1,7 +1,7 @@
 == NBA Bracket Predictor 
 ===== Full Stack Web App (JavaScript/Java)
 
-![nba-prediction-preview](https://user-images.githubusercontent.com/50474208/77380073-77dfb580-6d37-11ea-9829-7b312e58bf42.gif)
+![](https://user-images.githubusercontent.com/50474208/77380073-77dfb580-6d37-11ea-9829-7b312e58bf42.gif)
 
 
-![nba-prediction-preview](https://user-images.githubusercontent.com/50474208/77380690-0274e480-6d39-11ea-8702-719130341afa.gif)
+![](https://user-images.githubusercontent.com/50474208/77380690-0274e480-6d39-11ea-8702-719130341afa.gif)
