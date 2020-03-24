@@ -1,27 +1,21 @@
 package hello;
 
-import org.json.JSONObject;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
-import org.springframework.ui.Model;
 
-import java.net.URI;
 import java.sql.*;
 import java.util.List;
 import java.util.Map;
-import java.util.*;
 
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
 
 @Controller
-public class GreetingController {
+public class PlayoffController {
 
-    Refnum reference_num = new Refnum(2);
+    //on server startup, no checking for which prediction number was last stored in database.
+    //for simplicity, the number is always restart to 0 on server restart for now
+    Refnum reference_num = new Refnum(0);
     BracketUser user;
 
     @RequestMapping(value = "/main", method = RequestMethod.POST)
@@ -29,6 +23,7 @@ public class GreetingController {
 
         user = userlog;
 
+        //set up connection for local database
         String connectionUrl = "jdbc:mysql://localhost:3306/nbabracket?serverTimezone=UTC";
 
         try {
