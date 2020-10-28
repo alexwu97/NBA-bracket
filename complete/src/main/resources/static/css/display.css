@@ -1,4 +1,4 @@
-body{
+body {
     font-family: "Arial Black", Gadget, sans-serif;
     background: url("http://getwallpapers.com/wallpaper/full/b/f/b/661242.jpg") no-repeat center center fixed;
     background-size: cover;
@@ -16,121 +16,66 @@ header{
     top: 0;
     width: 100%;
     z-index: 1;
-
 }
 
 h1{
     margin:0;
 }
 
-.main-page{
-    width:100%;
-    max-width: 1500px;
-    height: 100%;
+.search{
+    margin-top: 80px;
+    display: block;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 80px;
-
+    background-color: white;
+    width: 450px;
+    padding: 10px;
+}
+.search-area{
+    text-align: center;
 }
 
-.nba-container{
-    font-weight: 900;
-    font-size: 120%;
+.text{
+    color: red;
+    position: absolute;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: none;
+    font-style: italic;
+}
+
+input[type=text], select {
+  width: 100px;
+}
+
+.search-label{
+    display: block;
     text-align: center;
-    float: left;
-    width: 21%;
+}
+
+.main-body{
+    width:95%;
+    max-width: 1500px;
+    margin: 10px auto;
+}
+
+#bracket {
+    width: 100%;
+    overflow:hidden;
     background-color: #EBF5FA;
-    color: #2C7399;
-    height: 376px;
-    margin: 0 1% 17px 1%;
+    padding-top: 20px;
+    font-size: 12px;
+    padding: 20px 0 0 0;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.nba-container p, .lookup-container p{
-    padding: 30% 0 0 0;
-}
-
-.predict-button {
-    font-family: "Arial Black", Gadget, sans-serif;
-    padding: 15px 30px;
-    margin-top: 20px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    background-color: #084E8A;
-}
-
-.predict-button:hover, .lookup-button:hover, .reveal-button:hover {
-  background-color:#006FBB;
-  color: black;
-}
-
-.reveal-button {
-    font-family: "Arial Black", Gadget, sans-serif;
-    padding: 15px 30px;
-    margin-top: 20px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    background-color: #084E8A;
-}
-
-.lookup-container {
-    font-weight: 900;
-    font-size: 120%;
-    float: left;
-    width: 21%;
-    text-align: center;
-    vertical-align: middle;
-    background-color: #EBF5FA;
-    color: #2C7399;
-    height: 377px;
-    margin: 18px 1% 0 1%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.lookup-button {
-    font-family: "Arial Black", Gadget, sans-serif;
-    padding: 15px 30px;
-    margin-top: 20px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    background-color: #084E8A;
-    margin-left: 10%;
-    margin-right: 10%;
-}
-
-.current-container{
-    float: left;
-    background: white;
-    width: 75%;
-    margin: 0 1% 10px 1%;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-    height: 788px;
-    max-height: 788px;
-}
-
-.center{
-    position: relative;
-    top: 40%;
-    text-align: center;
 
 }
 
-.center-positioning{
-    transform: translateY(-315px);
-    transition:  all 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-}
-
-.center h1{
-    font-family: 'Roboto Condensed', sans-serif;
-    color: #2C7399;
+.visible{
+    display: none;
 }
 
 .container {
-    visibility: hidden;
-    opacity: 0;
+    font-size: 140%;
     padding: 15px;
     margin: 0 auto;
     display:block;
@@ -142,14 +87,6 @@ h1{
     display: flex;
     -webkit-flex-direction:row;
     flex-direction: row;
-
-}
-
-.container-reveal{
-    visibility: visible;
-    opacity: 1;
-    transition: visibility 0s, opacity 1s linear;
-    transition-delay: 0.7s;
 }
 
 .split {
@@ -176,13 +113,12 @@ h1{
     align-self:center;
     margin-top: -115px;
     text-align: center;
-    padding: 230px 0\9;
 }
 
 .champion i {
     color: #a0a6a8;
     font-size: 45px;
-    padding: 10px 0;
+    padding: 15px 0;
 }
 
 .round {
@@ -199,7 +135,6 @@ h1{
     width:30.8333%\9;
 }
 
-
 .west .round {
     margin: 0 2.5% 0 0;
 }
@@ -209,48 +144,125 @@ h1{
 }
 
 .matchup {
-    margin:40px 0 50px 0;
+    margin: 20px 0 40px 0;
     width: 100%;
     padding: 10px 0;
-    height:60px;
+    height: 100px;
     -webkit-transition: all 0.2s;
     transition: all 0.2s;
 }
 
-.score {
-    text-transform: uppercase;
-    float: right;
-    font-size: 1em;
-    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
-    position: absolute;
-    right: 5px;
-}
-
-.score2 {
-    text-transform: uppercase;
-    float: right;
-    font-size: 1em;
-    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
-    position: absolute;
-    left: 5px;
-}
 
 #gsw {
     background: url("http://content.sportslogos.net/logos/6/235/full/4449_golden_state_warriors-primary_dark-2020.png") center;
     background-size: cover;
     position: relative;
+    transition: all .5s;
 }
 
 #lac {
     background: url("http://content.sportslogos.net/logos/6/236/full/5529_los_angeles_clippers-jersey-2016.png") center;
     background-size: cover;
     position: relative;
+    transition: all .5s;
 }
 
 #hsr {
     background: url("http://content.sportslogos.net/logos/6/230/full/9260_houston_rockets-alternate-2020.png") center;
     background-size: cover;
     position: relative;
+    transition: all .5s;
+}
+
+#uta {
+    background: url("http://content.sportslogos.net/logos/6/234/full/1734_utah_jazz-primary_on_dark-2017.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#ptb{
+    background: url("http://content.sportslogos.net/logos/6/239/full/2264_portland_trail_blazers-primary_on_dark-2005.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#okc{
+    background: url("http://content.sportslogos.net/logos/6/2687/full/qu0jvjrn2w1gjc5pn9qcpnlrg.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#dvn{
+    background: url("http://content.sportslogos.net/logos/6/229/full/1708_denver_nuggets-primary_on_dark-2019.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#sas{
+    background: url("http://content.sportslogos.net/logos/6/233/full/2029_san_antonio_spurs-primary_on_dark-2003.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#mwb{
+    background: url("http://content.sportslogos.net/logos/6/225/full/8275_milwaukee_bucks-primary-2016.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#dtp{
+    background: url("http://content.sportslogos.net/logos/6/223/full/6107_detroit_pistons-primary_on_dark-2018.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#boc{
+    background: url("http://content.sportslogos.net/logos/6/213/full/4548_boston_celtics-primary_on_dark-1997.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#inp{
+    background: url("http://content.sportslogos.net/logos/6/224/full/1059_indiana_pacers-primary_on_dark-2018.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#phi{
+    background: url("http://content.sportslogos.net/logos/6/218/full/3101_philadelphia_76ers-primary_dark-1978.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#bkn{
+    background: url("http://content.sportslogos.net/logos/6/3786/full/6332_brooklyn_nets-primary_on_dark-2013.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#tra{
+    background: url("http://content.sportslogos.net/logos/6/227/full/5082_toronto_raptors-primary_on_dark-2016.png")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
+}
+
+#orl{
+    background: url("http://content.sportslogos.net/logos/6/217/full/wd9ic7qafgfb0yxs7tem7n5g4.gif")center;
+    background-size: cover;
+    position: relative;
+    transition: all .5s;
 }
 
 .team:before, .team2:before{
@@ -260,85 +272,7 @@ h1{
     right: 0;
     left: 0;
     bottom: 0;
-    background: rgba(255,255,255, 0.2);
-}
-
-#uta {
-    background: url("http://content.sportslogos.net/logos/6/234/full/1734_utah_jazz-primary_on_dark-2017.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#ptb{
-    background: url("http://content.sportslogos.net/logos/6/239/full/2264_portland_trail_blazers-primary_on_dark-2005.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#okc{
-    background: url("http://content.sportslogos.net/logos/6/2687/full/qu0jvjrn2w1gjc5pn9qcpnlrg.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#dvn{
-    background: url("http://content.sportslogos.net/logos/6/229/full/1708_denver_nuggets-primary_on_dark-2019.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#sas{
-    background: url("http://content.sportslogos.net/logos/6/233/full/2029_san_antonio_spurs-primary_on_dark-2003.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#mwb{
-    background: url("http://content.sportslogos.net/logos/6/225/full/8275_milwaukee_bucks-primary-2016.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#dtp{
-    background: url("http://content.sportslogos.net/logos/6/223/full/6107_detroit_pistons-primary_on_dark-2018.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#boc{
-    background: url("http://content.sportslogos.net/logos/6/213/full/4548_boston_celtics-primary_on_dark-1997.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#inp{
-    background: url("http://content.sportslogos.net/logos/6/224/full/1059_indiana_pacers-primary_on_dark-2018.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#phi{
-    background: url("http://content.sportslogos.net/logos/6/218/full/3101_philadelphia_76ers-primary_dark-1978.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#bkn{
-    background: url("http://content.sportslogos.net/logos/6/3786/full/6332_brooklyn_nets-primary_on_dark-2013.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#tra{
-    background: url("http://content.sportslogos.net/logos/6/227/full/5082_toronto_raptors-primary_on_dark-2016.png")center;
-    background-size: cover;
-    position: relative;
-}
-
-#orl{
-    background: url("http://content.sportslogos.net/logos/6/217/full/wd9ic7qafgfb0yxs7tem7n5g4.gif")center;
-    background-size: cover;
-    position: relative;
+    background: rgba(255,255,255,0.2);
 }
 
 .team {
@@ -364,19 +298,18 @@ h1{
     text-align: right;
     font-size: 0.8em;
     color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
-
 }
 
 .round-two .matchup {
-    margin:30px 0 50px 0;
-    height: 50px;
-    padding: 105px 0;
+    margin: 20px 0 40px 0;
+    height: 100px;
+    padding: 100px 0;
 }
 
 .round-three .matchup {
-    margin:60px 0 50px 0;
-    height: 0px;
-    padding: 245px 0;
+    margin: 20px 0 40px 0;
+    height: 100px;
+    padding: 280px 0;
 }
 
 .round-details {
@@ -391,6 +324,10 @@ h1{
 .champion li, .round li {
     background-color: #fff;
     box-shadow: none;
+}
+
+.lock {
+    opacity: 0.45;
 }
 
 .final {margin: 4.5em 0;}
@@ -432,8 +369,19 @@ h1{
   }
 }
 
-@media screen and (max-width: 980px) {
-  #bracket{
+
+
+@media screen and (min-width: 981px) and (max-width: 1099px) {
+  .container {margin: 0 1%;}
+  .champion {width: 14%;}
+  .split {width:43%; }
+  .west .vote-box {margin-left: 138px;}
+
+}
+
+@media screen and (max-width: 600px) {
+  .main-body{
+    width: 600px;
     margin-left:0;
     margin-right:0;
   }
@@ -443,21 +391,61 @@ h1{
   .split {border-bottom: 1px solid #b6b6b6; padding-bottom: 20px;}
 }
 
-
-@media screen and (max-width: 400px) {
-
-  .split {width: 95%;margin: 25px 2.5%;}
-  .round {width:21%;}
-  .current {-webkit-flex-grow:1;-moz-flex-grow:1;flex-grow:1;}
-  .round-details {font-size: 90%;}
-
-
+.score {
+    text-transform: uppercase;
+    float: right;
+    font-size: 1em;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
+    position: absolute;
+    right: 5px;
 }
 
-input[type=number]::-webkit-inner-spin-button, input[type=number]::-webkit-outer-spin-button {
-    -webkit-appearance: none;
+.score2 {
+    text-transform: uppercase;
+    float: right;
+    font-size: 1em;
+    color: white; text-shadow: black -0.1em -0.1em 0.2em, black 0.1em 0.1em 0.2em;
+    position: absolute;
+    left: 5px;
 }
 
 .team-name{
     position: relative;
+}
+
+.IO{
+    margin: 15px 0 15px 0;
+    padding: 20px;
+    float: right;
+    background-color: #EBF5FA;
+    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+button {
+    font-family: "Arial Black", Gadget, sans-serif;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+.ret{
+    border-color: #BF0711;
+    background-color: #BF0711;
+    margin: 0 10px 0 0;
+}
+
+.ret:hover{
+    border-color: #DE3618;
+    background-color: #DE3618;
+}
+
+.sub{
+    border-color: #108043;
+    background-color: #108043;
+    margin: 0 0 0 10px;
+}
+
+.sub:hover{
+    border-color: #50B83C;
+    background-color: #50B83C;
 }

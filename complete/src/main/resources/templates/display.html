@@ -1,0 +1,228 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>NBA Bracket</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Holtwood+One+SC' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Kaushan+Script|Herr+Von+Muellerhoff' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Istok+Web|Roboto+Condensed:700' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/display.css">
+</head>
+<body>
+<header>
+    <h1>NBA Bracket</h1>
+</header>
+<div class="banner">
+    <p></p>
+</div>
+
+<div class="search">
+    <label class="search-label"><b>Enter a Reference Number to view the prediction</b></label>
+    <div class = "search-area">
+        <input id="search-box" type="text" value="">
+        <button onclick="getPrediction()">Search</button>
+        <span class="text">not found</span>
+    </div>
+</div>
+<div class="main-body visible">
+    <section id="bracket">
+        <div class="container">
+            <div class="split west">
+                <div class="round round-one">
+                    <div class="round-details">Western Conference Round 1<br/></div>
+                    <ul class="matchup">
+                        <li class="team team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                        <li class="team team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                        <li class="team team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                        <li class="team team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                        <li class="team team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                    </ul>
+
+                </div>  <!-- END ROUND ONE -->
+
+                <div class="round round-two">
+                    <div class="round-details">Western Conference Semi-Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                        <li class="team team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                        <li class="team team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND TWO -->
+
+                <div class="round round-three">
+                    <div class="round-details">Western Conference Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                        <li class="team team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND THREE -->
+            </div>
+
+            <div class="champion west east">
+                <div class="final">
+                    <i class="fa fa-trophy"></i>
+                    <div class="round-details">championship <br/></div>
+                    <ul class ="matchup championship">
+                        <li class="team team-top champ">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                        <li class="team team-bottom champ">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score"></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+
+            <div class="split east">
+                <div class="round round-three">
+                    <div class="round-details">Eastern Conference Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team2 team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                        <li class="team2 team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND THREE -->
+
+                <div class="round round-two">
+                    <div class="round-details">Eastern Conference Semi-Finals<br/></div>
+                    <ul class="matchup">
+                        <li class="team2 team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                        <li class="team2 team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team2 team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                        <li class="team2 team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND TWO -->
+
+                <div class="round round-one current">
+                    <div class="round-details">Eastern Conference Round 1<br/></div>
+                    <ul class="matchup">
+                        <li class="team2 team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                        <li class="team2 team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+
+                        <li class="team2 team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+
+                        <li class="team2 team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team2 team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                        <li class="team2 team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                    </ul>
+                    <ul class="matchup">
+                        <li class="team2 team-top">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                        <li class="team2 team-bottom">
+                            <span class="team-name"></span>
+                            <span class="scoreVal score2"></span>
+                        </li>
+                    </ul>
+                </div>  <!-- END ROUND ONE -->
+            </div>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript" th:src="@{/js/display.js}"></script>
+</body>
+</html>

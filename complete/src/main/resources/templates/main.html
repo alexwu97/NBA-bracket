@@ -25,7 +25,7 @@
             <div class="center">
                 <h1>Current Playoff Status:</h1>
 
-                <button onclick="reveal()" class="reveal-button">Reveal Current Playoff</button>
+                <button onclick="revealCurrentPlayoffStatus()" class="reveal-button">Reveal Current Playoff</button>
             </div>
 
 
@@ -56,7 +56,7 @@
                         </ul>
                         <ul class="matchup">
                             <li class="team team-top" id="ptb">
-                                <span class="team-name">TRAIL BLAZERS</span>
+                                <span class="team-name">BLAZERS</span>
                                 <span class="score">3</span>
                             </li>
                             <li class="team team-bottom" id="okc">
@@ -232,7 +232,7 @@
         <div class="lookup-container">
             <p>Take a Look at Other People's NBA Playoff Predictions!</p>
             <img src="https://image.flaticon.com/icons/svg/151/151917.svg" style="width:40px; height:40px;"><br>
-            <button class="lookup-button">Other's Playoff Predictions</button>
+            <button onclick="location.href='/display';" class="lookup-button">Other's Playoff Predictions</button>
         </div>
 
     </div>

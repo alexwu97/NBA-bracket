@@ -1,128 +1,138 @@
 //ensures one input is selected at a time
-function outputFunc(inputID, side){
+function enterScore(inputID, region, index){
     if ($(inputID).val() == ""){
         $(inputID).val("0");
-    }else if ($(inputID).val() < 0 || $(inputID).val() > 4){
-        if($(inputID).val() > 4){
-            alert("Each series is a best of 7. A team can only have a maximum of 4 wins. Do you mean 4?");
-             $(inputID).val("4");
-        }else{
-            alert("A team cannot have negative wins.")
-             $(inputID).val("0");
-        }
+    }else if ($(inputID).val() > 4){
+        alert("Each series is a best of 7. A team can only have a maximum of 4 wins. Do you mean 4?");
+        $(inputID).val("4");
+    }else if ($(inputID).val() < 0){
+        alert("A team cannot have negative wins.")
+        $(inputID).val("0");
     }else{
         $(inputID).val(parseInt($(inputID).val()));
     }
-    nextLvlCheck(side);
 
-}
-
-var topTeam = new Object();
-var botTeam = new Object();
-
-function nextLvlCheck(side){
-    var j;
-    for(i = 0; i <= 6; i++){
-        j = i;
-        if (side == ".east"){
-            j = 7 - i;
-        }
-        topTeam.Num = parseInt($(side).children().children(".matchup").eq(j).children().eq(0).children(".value").val());
-        topTeam.Name = $(side).children().children(".matchup").eq(j).children().eq(0).children(".team-name").text();
-        topTeam.Logo = $(side).children().children(".matchup").eq(j).children().eq(0).attr('id');
-        botTeam.Num = parseInt($(side).children().children(".matchup").eq(j).children().eq(1).children(".value").val());
-        botTeam.Name = $(side).children().children(".matchup").eq(j).children().eq(1).children(".team-name").text();
-        botTeam.Logo = $(side).children().children(".matchup").eq(j).children().eq(1).attr('id');
-
-        if ((topTeam.Num == 4 || botTeam.Num == 4) && ((topTeam.Num + botTeam.Num) <= 7)){
-            if(topTeam.Num == 4){
-                if (side == ".east"){
-                    bracketAddition(side, j, ".scoreinput2", topTeam.Name, topTeam.Logo);
-                }else{
-                    bracketAddition(side, j+8, ".scoreinput", topTeam.Name, topTeam.Logo);
-                }
-            }else{
-                if (side == ".east"){
-                    bracketAddition(side, j, ".scoreinput2", botTeam.Name, botTeam.Logo);
-                }else{
-                    bracketAddition(side, j+8, ".scoreinput", botTeam.Name, botTeam.Logo);
-                }
-            }
-        }else{
-            if (side == ".east"){
-                bracketRemoval(side, j, ".scoreinput2");
-            }else{
-                bracketRemoval(side, j+8, ".scoreinput");
-            }
-        }
+    if(region == ".east"){
+        updateEastBracket(index);
+    }else{
+        updateWestBracket(index);
     }
-
 }
 
-//updates team in next tourny level
-function bracketAddition(side, n, type, advTeam, logo){
-    $(side).children().children(".matchup").children().eq(n).children(".team-name").text(advTeam);
-    $(side).children().children(".matchup").children().eq(n).attr('id', logo);
-    if ($(side).children().children(".matchup").children().eq(n).hasClass("champ")){
-        $(side).children().children(".matchup").children().eq(n).children(".value").addClass("scoreinput");
+function populateTeam(region, index, side){
+    return {
+        score: parseInt($(region).children().children(".matchup").eq(index).children().eq(side).children(".value").val()),
+        name: $(region).children().children(".matchup").eq(index).children().eq(side).children(".team-name").text(),
+        logo: $(region).children().children(".matchup").eq(index).children().eq(side).attr('id')
+    };
+}
+
+function updateEastBracket(index){
+    if(index > 0){
+        //get team info for both teams in matchup
+        var topTeam = populateTeam(".east", index, 0);
+        var botTeam = populateTeam(".east", index, 1);
+
+        //scores for both teams are valid
+        if ((topTeam.score == 4 || botTeam.score == 4) && ((topTeam.score + botTeam.score) <= 7)){
+            //update top team if it has 4 wins
+            if(topTeam.score == 4){
+                advanceTeamToNextRound(".east", index, ".scoreinput2", topTeam.name, topTeam.logo);
+            }else{ //update bot team if it has 4 wins
+                advanceTeamToNextRound(".east", index, ".scoreinput2", botTeam.name, botTeam.logo);
+            }
+        }else{ //no team found to have 4 wins
+            clearTeamInNextRound(".east", index, ".scoreinput2");
+        }
+        //check next round as well
+        updateEastBracket(Math.floor(index /2));
+    }
+}
+
+function updateWestBracket(index){
+    if(index < 7){
+        //get team info for both teams in matchup
+        var topTeam = populateTeam(".west", index, 0);
+        var botTeam = populateTeam(".west", index, 1);
+
+        //scores for both teams are valid
+        if ((topTeam.score == 4 || botTeam.score == 4) && ((topTeam.score + botTeam.score) <= 7)){
+            //update top team if it has 4 wins
+            if(topTeam.score == 4){
+                advanceTeamToNextRound(".west", index + 8, ".scoreinput", topTeam.name, topTeam.logo);
+            }else{ //update bot team if it has 4 wins
+                advanceTeamToNextRound(".west", index + 8, ".scoreinput", botTeam.name, botTeam.logo);
+            }
+        }else{ //no team found to have 4 wins
+            clearTeamInNextRound(".west", index + 8, ".scoreinput");
+        }
+        //check next round as well
+        updateWestBracket(index + Math.floor((8 - index) / 2));
+    }
+}
+
+//updates team in next round
+function advanceTeamToNextRound(region, n, type, advTeam, logo){
+    $(region).children().children(".matchup").children().eq(n).children(".team-name").text(advTeam);
+    $(region).children().children(".matchup").children().eq(n).attr('id', logo);
+    if ($(region).children().children(".matchup").children().eq(n).hasClass("champ")){
+        $(region).children().children(".matchup").children().eq(n).children(".value").addClass("scoreinput");
         $(".scoreinput").show();
     }else{
-        $(side).children().children(".matchup").children().eq(n).children(".value").addClass(type.slice(1));
+        $(region).children().children(".matchup").children().eq(n).children(".value").addClass(type.slice(1));
         $(type).show();
     }
-    $(side).children().children(".matchup").children().eq(n).removeClass("lock");
-
+    $(region).children().children(".matchup").children().eq(n).removeClass("lock");
 }
 
-function bracketRemoval(side, n, type){
-    $(side).children().children(".matchup").children().eq(n).addClass("lock");
-    if ($(side).children().children(".matchup").children().eq(n).hasClass("champ")){
-        $(side).children().children(".matchup").children().eq(n).children(".value").removeClass("scoreinput");
+function clearTeamInNextRound(region, n, type){
+    $(region).children().children(".matchup").children().eq(n).addClass("lock");
+    if ($(region).children().children(".matchup").children().eq(n).hasClass("champ")){
+        $(region).children().children(".matchup").children().eq(n).children(".value").removeClass("scoreinput");
     }else{
-        $(side).children().children(".matchup").children().eq(n).children(".value").removeClass(type.slice(1));
+        $(region).children().children(".matchup").children().eq(n).children(".value").removeClass(type.slice(1));
     }
-    $(side).children().children(".matchup").children().eq(n).children(".value").val("0");
-    $(side).children().children(".matchup").children().eq(n).children(".value").hide();
-    $(side).children().children(".matchup").children().eq(n).children(".team-name").text("");
-    $(side).children().children(".matchup").children().eq(n).attr('id', "");
+    $(region).children().children(".matchup").children().eq(n).children(".value").val("0");
+    $(region).children().children(".matchup").children().eq(n).children(".value").hide();
+    $(region).children().children(".matchup").children().eq(n).children(".team-name").text("");
+    $(region).children().children(".matchup").children().eq(n).attr('id', "");
 }
 
 //checks if everything is filled in before submission
-function testFunct(){
-    var j;
+function submitPrediction(){
+    //check if the prediction is complete and valid
     for (j=0; j<15; j++){
-        topTeam.Num = parseInt($(".matchup").eq(j).children().eq(0).children(".value").val());
-        botTeam.Num = parseInt($(".matchup").eq(j).children().eq(1).children(".value").val());
-        if ((topTeam.Num < 4 && botTeam.Num < 4) || (topTeam.Num == 4 && botTeam.Num == 4)){
+        var topTeamScore = parseInt($(".matchup").eq(j).children().eq(0).children(".value").val());
+        var botTeamScore = parseInt($(".matchup").eq(j).children().eq(1).children(".value").val());
+        if ((topTeamScore < 4 && botTeamScore < 4) || (topTeamScore == 4 && botTeamScore == 4)){
             alert("Please fill in all the scores");
-            return ;
+            return;
         }
     }
 
-    var responseBody = [];
+    //store prediction
+    var prediction = [];
     var i;
     for (i=0; i<30; i++){
-        responseBody.push({
-            team : $(".matchup").children().eq(i).children(".team-name").text(),
-            score : $(".matchup").children().eq(i).children(".value").val()
-         });
+        prediction.push({
+            teamName : $(".matchup").children().eq(i).children(".team-name").text(),
+            score : $(".matchup").children().eq(i).children(".value").val(),
+            teamID : $(".matchup").children().eq(i).attr("id")
+        });
     }
-    testAjax(responseBody);
-
+    sendPredictionToServer(prediction);
 }
 
 //sends prediction to backend
-function testAjax(responseBody){
+function sendPredictionToServer(responseBody){
     $.ajax({
         type: "POST",
         url: "/bracket",
         data: JSON.stringify(responseBody),
         contentType: "application/json",
-        success: function (result){
-            hideFunct('stats');
-            console.log(result.number);
-            $('#stats > div > p:eq(1)').text("Your reference number is: " + result.number);
-
+        success: function (responseNumber){
+            showDisplay('stats');
+            $('#stats > div > p:eq(1)').text("Your reference number is: " + responseNumber);
         },
         error: function(){
             console.log("fail");
@@ -130,9 +140,7 @@ function testAjax(responseBody){
     });
 }
 
-
-
-function hideFunct(x){
+function showDisplay(x){
     document.getElementById(x).style.display = "block";
     // Get the modal
     var modal = document.getElementById(x);
