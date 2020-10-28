@@ -22,8 +22,9 @@ Predicting the bracket:
 The app uses Maven and can be opened in IDE by opening the pom.xml file located in NBA-bracket > complete > pom.xml
 Run the Application.java to start the app.
 
-As the app uses a MySQL database, you will need to either 
-1) Get MySQL, create a database and table, and modify the JDBC connection to connect to your database or
-2) Remove the database related section of the backend code in the PlayoffController.java
+#### MySQL:
 
-The login is not implemented fully, therefore there is no need to register an account and you can enter anything in the username and password to proceed. You can also select the learn more button to learn how to enter your predictions in the bracket.
+As the app uses a MySQL database, you will need to install MySQL. The app will automatically create a database. You will need to go to applications.properties in src and update the username and password to your MySQL account.
+
+#### Navigating the App:
+The app's login is not implemented fully, therefore there is no need to register an account and you can enter anything in the username and password to proceed. You can also select the learn more button to learn how to enter your predictions in the bracket.
