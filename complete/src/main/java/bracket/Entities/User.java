@@ -1,4 +1,4 @@
-package bracket;
+package bracket.Entities;
 
 import javax.persistence.*;
 

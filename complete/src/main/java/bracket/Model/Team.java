@@ -1,4 +1,4 @@
-package bracket;
+package bracket.Model;
 
 public class Team {
     private String teamName;

@@ -1,5 +1,10 @@
 package bracket;
 
+import bracket.Entities.Prediction;
+import bracket.Entities.User;
+import bracket.Model.Team;
+import bracket.Repositories.PredictionRepository;
+import bracket.Repositories.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

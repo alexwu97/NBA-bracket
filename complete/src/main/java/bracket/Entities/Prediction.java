@@ -1,4 +1,6 @@
-package bracket;
+package bracket.Entities;
+
+import bracket.Model.Team;
 
 import javax.persistence.*;
 import java.util.List;

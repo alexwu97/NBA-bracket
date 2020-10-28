@@ -1,5 +1,6 @@
-package bracket;
+package bracket.Entities;
 
+import bracket.Model.Team;
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import org.thymeleaf.util.StringUtils;
