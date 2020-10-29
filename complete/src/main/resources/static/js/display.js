@@ -20,10 +20,11 @@ function getPrediction(){
 }
 
 function populateBracket(data){
-    var predictionList = data.predictionList;
+    let predictionList = data.predictionList;
     for(i = 0; i < predictionList.length; i++){
-        $(".matchup").children().eq(i).children(".team-name").text(predictionList[i].teamName);
-        $(".matchup").children().eq(i).children(".scoreVal").text(predictionList[i].score);
-        $(".matchup").children().eq(i).attr('id', predictionList[i].teamID);
+        let teamLocation = $(".matchup").children().eq(i);
+        teamLocation.children(".team-name").text(predictionList[i].teamName);
+        teamLocation.children(".scoreVal").text(predictionList[i].score);
+        teamLocation.attr('id', predictionList[i].teamID);
     }
 }
