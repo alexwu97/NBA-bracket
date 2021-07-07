@@ -117,6 +117,7 @@ function submitPrediction(){
             teamID : teamLocation.attr("id")
         });
     }
+    console.log(prediction);
     sendPredictionToServer(prediction);
 }
 

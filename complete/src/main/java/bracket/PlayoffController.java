@@ -17,6 +17,11 @@ import java.util.Optional;
 
 @Controller
 public class PlayoffController {
+    final static int PREDICTION_TEAM_SIZE = 30;
+    final static String ERROR_MESSAGE_TEAM_SIZE = "no 30 teams";
+    final static String ERROR_MESSAGE_MISSING_INFO = "missing team info";
+    final static String ERROR_MESSAGE_NOT_FOUND_PREDICTION = "prediction not found";
+
     @Autowired
     private PredictionRepository predictionRepository;
 
@@ -43,7 +48,15 @@ public class PlayoffController {
     }
 
     @RequestMapping(value = "/bracket", method = RequestMethod.POST)
-    public ResponseEntity<Integer> bracketPost(@RequestBody List<Team> userPrediction) {
+    public ResponseEntity<Integer> bracketPost(@RequestBody List<Team> userPrediction) throws Exception {
+        if(userPrediction.size() != PREDICTION_TEAM_SIZE){
+            throw new Exception(ERROR_MESSAGE_TEAM_SIZE);
+        }
+        for(Team team : userPrediction){
+            if(team.getScore() == null || team.getTeamID() == null || team.getTeamName() == null) {
+                throw new Exception(ERROR_MESSAGE_MISSING_INFO);
+            }
+        }
         Prediction prediction = new Prediction();
         prediction.setUserName(user == null ? "guest" : user.getUserName());
         prediction.setPredictionList(userPrediction);
@@ -59,11 +72,13 @@ public class PlayoffController {
     }
 
     @RequestMapping(value = "/display/{search}", method = RequestMethod.GET)
-    public ResponseEntity<Prediction> providePrediction(@PathVariable("search") String search) {
+    public ResponseEntity<?> providePrediction(@PathVariable("search") String search) throws Exception{
         Optional<Prediction> queriedPrediction = predictionRepository.findById(Integer.parseInt(search));
         Prediction prediction = null;
         if (queriedPrediction.isPresent()) {
             prediction = queriedPrediction.get();
+        }else{
+            throw new Exception(ERROR_MESSAGE_NOT_FOUND_PREDICTION);
         }
         return new ResponseEntity<>(prediction, HttpStatus.OK);
     }

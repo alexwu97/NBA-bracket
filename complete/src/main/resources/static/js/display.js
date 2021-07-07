@@ -5,12 +5,11 @@ function getPrediction(){
         type: "GET",
         url: "/display/" + searchedID,
         success: function (result){
-            console.log(result.predictionList);
-            if(result){
+            if(result == "prediction number not found"){
+               $(".text").show();
+            }else{
                $(".visible").show();
                populateBracket(result);
-            }else{
-               $(".text").show();
             }
         },
         error: function(){
