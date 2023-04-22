@@ -48,7 +48,7 @@ public class PlayoffController {
     }
 
     @RequestMapping(value = "/bracket", method = RequestMethod.POST)
-    public ResponseEntity<Integer> bracketPost(@RequestBody List<Team> userPrediction) throws Exception {
+    public ResponseEntity<String> bracketPost(@RequestBody List<Team> userPrediction) throws Exception {
         if(userPrediction.size() != PREDICTION_TEAM_SIZE){
             throw new Exception(ERROR_MESSAGE_TEAM_SIZE);
         }
@@ -57,13 +57,15 @@ public class PlayoffController {
                 throw new Exception(ERROR_MESSAGE_MISSING_INFO);
             }
         }
-        Prediction prediction = new Prediction();
-        prediction.setUserName(user == null ? "guest" : user.getUserName());
-        prediction.setPredictionList(userPrediction);
+        Prediction prediction = Prediction
+                .builder()
+                .userName(user == null ? "guest" : user.getUsername())
+                .predictionList(userPrediction)
+                .build();
 
         Prediction predict = predictionRepository.save(prediction);
 
-        return new ResponseEntity<>(predict.getPredictionNo(), HttpStatus.OK);
+        return new ResponseEntity<>(predict.getId(), HttpStatus.OK);
     }
 
     @RequestMapping(value = "/display", method = RequestMethod.GET)
@@ -73,14 +75,11 @@ public class PlayoffController {
 
     @RequestMapping(value = "/display/{search}", method = RequestMethod.GET)
     public ResponseEntity<?> providePrediction(@PathVariable("search") String search) throws Exception{
-        Optional<Prediction> queriedPrediction = predictionRepository.findById(Integer.parseInt(search));
-        Prediction prediction = null;
-        if (queriedPrediction.isPresent()) {
-            prediction = queriedPrediction.get();
-        }else{
+        Optional<Prediction> queriedPrediction = predictionRepository.findById(search);
+        if (!queriedPrediction.isPresent()) {
             throw new Exception(ERROR_MESSAGE_NOT_FOUND_PREDICTION);
         }
-        return new ResponseEntity<>(prediction, HttpStatus.OK);
+        return new ResponseEntity<>(queriedPrediction.get(), HttpStatus.OK);
     }
 }
 

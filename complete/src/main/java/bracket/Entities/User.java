@@ -1,44 +1,21 @@
 package bracket.Entities;
 
+import lombok.*;
+import org.springframework.data.mongodb.core.mapping.Document;
+
 import javax.persistence.*;
 
-@Entity
-@Table(name = "users")
+@Getter
+@Setter
+@Builder
+@AllArgsConstructor
+@RequiredArgsConstructor
+@Document("users")
 public class User {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer userID;
+    private String id;
 
-    private String userName;
+    private String username;
 
     private String password;
-
-    public User(String userName, String password) {
-        this.userName = userName;
-        this.password = password;
-    }
-
-    public Integer getUserID() {
-        return userID;
-    }
-
-    public String getUserName() {
-        return this.userName;
-    }
-
-    public void setUserName(String username) {
-        this.userName = username;
-    }
-
-    public void setUserID(Integer userID) {
-        this.userID = userID;
-    }
-
-    public String getPassword() {
-        return this.password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
 }

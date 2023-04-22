@@ -1,45 +1,23 @@
 package bracket.Entities;
 
 import bracket.Model.Team;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.Setter;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Entity
-@Table(name = "prediction")
+@Getter
+@Setter
+@Builder
+@Document("predictions")
 public class Prediction {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer predictionNo;
+    private String id;
 
     private String userName;
 
-    @Lob
-    @Column(columnDefinition = "text")
-    @Convert(converter = TeamListConverter.class)
     private List<Team> predictionList;
-
-    public Integer getPredictionNo() {
-        return predictionNo;
-    }
-
-    public String getUserName(){
-        return userName;
-    }
-
-    public List<Team> getPredictionList(){
-        return predictionList;
-    }
-
-    public void setPredictionNo(Integer predictionNo){
-        this.predictionNo = predictionNo;
-    }
-
-    public void setUserName(String userName){
-        this.userName = userName;
-    }
-
-    public void setPredictionList(List<Team> predictionList) {
-        this.predictionList = predictionList;
-    }
 }
